@@ -1,0 +1,29 @@
+For breath-first serach, we explore breadth, by focusing on visiting all the nodes on one level before moving on to the next level.
+
+Pseudo Code:
+Class TreeNode:
+    Initialize(val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+Function bfs(root):
+    Initialize queue as a new double-ended queue
+
+    If root exists:
+        Append root to queue
+    
+    Set level to 0
+    While queue is not empty:
+        Print "level: ", level
+        Iterate from 1 to the number of elements in queue:
+            Set curr to the first element removed from queue
+            Print curr.val
+            If curr.left exists:
+                Append curr.left to queue
+            If curr.right exists:
+                Append curr.right to queue
+        Increment level by 1
+
+The time complexity of BFS is O(n), where 'n' is the number of nodes in the tree. This is because the algorithm visits each node exactly once
+its space complexity is best described as O(w), where 'w' is the maximum width of the tree, which is O(n) in the worst case.
