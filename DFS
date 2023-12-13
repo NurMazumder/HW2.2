@@ -1,0 +1,34 @@
+Depth First Search (DFS) is a technique used in binary search trees that explores the depth of the tree before its breadth. This approach involves continuously moving down the left or right subtree until you reach the end of the tree. DFS can be conducted in several ways, depending on the sequence in which the nodes—root, left child, and right child—are visited. The three primary methods are: Inorder, Preorder, Postorder. The most effective way to implement a depth-first search is through recursion, while you can use a stack and do it iteratively.
+
+Pseudo Code
+
+Class TreeNode:
+    Initialize(val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+Function inorder(root):
+    If root is None:
+        Return
+    Call inorder(root.left)
+    Output root.val
+    Call inorder(root.right)
+
+Function preorder(root):
+    If root is None:
+        Return
+    Output root.val
+    Call preorder(root.left)
+    Call preorder(root.right)
+
+Function postorder(root):
+    If root is None:
+        Return
+    Call postorder(root.left)
+    Call postorder(root.right)
+    Output root.val
+
+For all three traversal methods, the time complexity is O(n), where 'n' is the number of nodes in the tree. This is because each node in the tree is visited exactly once.
+For a balanced binary tree, the height is log(n), so the space complexity would be O(log(n)).
+For an unbalanced tree (e.g., a tree that is essentially a linked list), the height could be n, so the space complexity would be O(n).
